@@ -11,7 +11,7 @@ function App() {
           This is tailwind generated text!
         </h1>
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          Push to <code>main</code> branch to deploy to Netlify.
         </p>
         <a
           className="App-link"
