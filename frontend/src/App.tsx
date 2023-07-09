@@ -1,29 +1,95 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
+import {
+  Card,
+  Typography,
+  List,
+  ListItem,
+  ListItemPrefix,
+  ListItemSuffix,
+  Chip,
+} from "@material-tailwind/react";
+import {
+  PresentationChartBarIcon,
+  ShoppingBagIcon,
+  UserCircleIcon,
+  Cog6ToothIcon,
+  InboxIcon,
+  PowerIcon,
+} from "@heroicons/react/24/solid";
+import './App.css'
 
 function App() {
+  const [open, setOpen] = useState(false);
+ 
+  const handleOpen = (value: boolean) => {
+    setOpen(open === value ? false : value);
+  };
+
+  const getListItem = (text: string) => {
+    return (
+      <ListItem>
+        <ListItemPrefix>
+          <PresentationChartBarIcon className="h-5 w-5" />
+        </ListItemPrefix>
+        
+      </ListItem>
+    )
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="text-3xl font-bold underline">
-          This is tailwind generated text!
-        </h1>
-        <p>
-          Push to <code>main</code> branch to deploy to Netlify.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <div className="App">
+      <Card className="fixed top-0 left-0 h-full w-10 p-4 shadow-xl shadow-blue-gray-900/5">
+        <div className="mb-2 p-4">
+          <Typography variant="h5" color="blue-gray">
+            Sidebar
+          </Typography>
+        </div>
+        <List>
+          <ListItem>
+            <ListItemPrefix>
+              <PresentationChartBarIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            Dashboard
+          </ListItem>
+          <ListItem>
+            <ListItemPrefix>
+              <ShoppingBagIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            E-Commerce
+          </ListItem>
+          <ListItem>
+            <ListItemPrefix>
+              <InboxIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            Inbox
+            <ListItemSuffix>
+              <Chip value="14" size="sm" variant="ghost" color="blue-gray" className="rounded-full" />
+            </ListItemSuffix>
+          </ListItem>
+          <ListItem>
+            <ListItemPrefix>
+              <UserCircleIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            Profile
+          </ListItem>
+          <ListItem>
+            <ListItemPrefix>
+              <Cog6ToothIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            Settings
+          </ListItem>
+          <ListItem>
+            <ListItemPrefix>
+              <PowerIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            Log Out
+          </ListItem>
+        </List>
+      </Card>
+      </div>
+    </>
+  )
 }
 
-export default App;
+export default App
