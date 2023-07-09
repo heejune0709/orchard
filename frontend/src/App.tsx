@@ -11,7 +11,7 @@ function App() {
           This is tailwind generated text!
         </h1>
         <p>
-          Push to <code>dev</code> branch to deploy to Netlify.
+          Push to <code>dev</code> branch to deploy to Netlify
         </p>
         <a
           className="App-link"
